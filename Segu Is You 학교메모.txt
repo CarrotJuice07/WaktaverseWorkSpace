@@ -1,0 +1,59 @@
+3/31까지 BGM 샘플을 받기로 했는데 안옴 4/6 회의에서 체크해봐야 할듯
+4/6 회의에서 개발현황도 체크해봐야 함
+
+기획 진척도 : 각 테마마다 몇개의 스테이지로 구성될 것인지 계산 완료, 총 플레이타임, 메인 플레이 시스템 제외 어떤 기능을 구현할 것인지
+추가 기획 요소 : 테마마다 매칭시킬 핵심 텍스트 블럭은 무엇인지, 테마마다 디자인은 어떤 포인트를 들고 갈 것인지, 텍스트로 구현할 기능은 얼마나 되는지, 
+
+
+현재 구현 확정된 기능 텍스트
+You, Win, (Stop, Push), (Hot, Melt), Die, Move
+현재 구현 확정된 오브젝트 텍스트
+Segu, Love, Lava, Wall, Mail, Pin
+
+현재 구현 해야할 기능 및 오브젝트 (A:기능, O:오브젝트, T:텍스트)
+Tile(T), Grass(O,T), Lock(A,T), Open(A,T), End(A,T), Bomb(A,T), And(A,T), 
+
+
+스테이지 구성
+C - A-B-B - A-B-B - A-B-B - A-B-B - A-B-B - C
+
+ABB 사이클을 5번 반복한 후 C스테이지를 클리어하면 게임을 클리어하는 구조
+
+이 사이클을 단순히 ㄹㅇ 1방향으로만 진행시키면 너무 노잼임 
+A - (BBBBBB) - A - (BBBBBB) ~ 이런식으로 진행시키면 어떨까?
+다음 A로 넘어가기 위해 일정 개수 이상의 B를 클리어하는 구조
+B를 더 클리어한다면 or B를 전부 클리어 한다면 서브테마로 이동할 수 있는 문이 생겨나는 형태
+그러면 모든 B에 동일한 포인트를 배당해도 되는가? 다음 A로 넘어가기 위한 최소 포인트를 충족시키는데 B의 난이도에 따라 포인트를 차별화해도 되지 않을까? like 마리오 원더
+
+위와 같은 스테이지 구성을 가졌을 때 가장 처음 마주하는 스테이지는
+A - (BBB)로 구성하며 B는 각각 1 1 2 포인트를 제공, 다음 A로 가기 위해서 3포인트를 획득해야 하는 환경을 제공
+자연스럽게 모든 스테이지를 클리어할 수 있게 유도하여 히든 스테이지의 존재를 보여주면 좋을듯
+
+
+<구현할 기능 아이디어>
+Ghost : Stop과 Push를 무시합니다
+Block : Ghost에게만 Stop처럼 동작합니다 (일반적인 오브젝트에는 영향 X)
+<<< 서브테마 (공포)에 들어가면 좋을 것 같은 기믹
+
+Jump : 해당 기능을 가지고있는 타일과 겹쳐있을 시 다음 이동이 2칸으로 적용된다. (단, 2칸 너머에 stop, push를 가진 타일이 있을시 작동 X)
+<< 이건 메인테마의 기믹이 되어도 좋을 듯?
+
+Stair - Up : 메인 테마에서 다음 A로 넘어갈 때 트리거가 되는 역할이 되면 좋을 듯
+
+
+<원작자 개발허가 이메일 내용 작성> (팀원들이랑 외부 도움이 필요)
+Hello, I'm fan of Baba is You and One of Amateur Game developer.
+
+Now I'm planning to make a fan game of korean V-tuber, 'Gosegu' who belong to 'Waktaverse'.
+And I want to use Baba is You for reference.
+
+I promise that my game will only be used as YouTube content without any profit.
+And My team will make all images and sounds that will be used in the game themselves.
+So please allow us to use your great game as a reference.
+
+YouTube
+(고세구 유튜브 링크)
+(왁타버스 유튜브 링크)
+
+Sample of other Fan Game
+(왁이작 링크)
