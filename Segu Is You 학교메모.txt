@@ -11,7 +11,7 @@ You, Win, (Stop, Push), (Hot, Melt), Die, Move
 Segu, Love, Lava, Wall, Mail, Pin
 
 현재 구현 해야할 기능 및 오브젝트 (A:기능, O:오브젝트, T:텍스트)
-Tile(T), Grass(O,T), Lock(A,T), Open(A,T), End(A,T), Bomb(A,T), And(A,T), 
+Tile(T), Grass(O,T), Lock(A,T), Open(A,T), End(A,T), Bomb(A,T), And(A,T), Empty(T)
 
 
 스테이지 구성
